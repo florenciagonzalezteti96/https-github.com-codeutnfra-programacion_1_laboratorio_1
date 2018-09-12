@@ -1,45 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void mostrarArrayChar(char vec[], int tam);
-void ordenarCaracteres(char vec[], int tam);
 int main()
 {
-    char letras[] = { 'g', 'f', 'a', 'A', 'e', 'g', 'b', 'Z'} ;
+    char nombre[cant][31] nomaux[31];
+    char apellido[cant] [31] apeaux[31];
+    int edad[cant] edadaux;
+    int legajo[cant] legajoaux;
+    int isEmpty[cant]isEmptyaux;
 
-    mostrarArrayChar(letras, 8);
-    ordenarCaracteres(letras,8);
-    mostrarArrayChar(letras, 8);
-
-    return 0;
-}
-void mostrarArrayChar(char vec[], int tam)
-{
-    for(int i=0; i <tam; i++)
-    {
-       printf("%c", vec[i]);
-    }
-    printf("\n\n");
-}
-void ordenarCaracteres(char vec[], int tam)
-{
-
-
-
-    char aux;
-
-    for(int i=0; i < tam -1; i++)
-    {
-        for(int j=i +1; j < tam; j++)
+    for (1=0 < cant; i++)
         {
+            for(j=i+1; < cant;j++)
+                {
+                    if(stremp(apellido[i],apellido[j])>0)
+                    {
+                        strepy(nomaux, nombre[i]);
+                        strepy(nombre[i],nombre[j]);
+                        strepy(nombre[j],nomaux);
+                        strepy(apeaux,apellido[i]);
+                        strepy(apellido[i],apellido[j]);
+                        strepy(apellido[j],apeaux);
 
-            if ( vec[i] > vec[j] )
-            {
-                aux = vec[i];
-                vec [i] = vec [j];
-                vec [j] = aux;
-            }
+                        edadaux=edad[i];
+                        edad[i]=edad[j];
+                        edad[j]=edadaux;
+
+                        legajoaux=legajo[i];
+                        legajo[i]=legajo[j];
+                        legajo[j]=legajoaux;
+
+                        isEmptyaux=isEmpty[i];
+                        isEmpty[i]=isEmpty[j];
+                        isEmpty[j]=isEmptyaux;
+
+                    }
+                    else
+                    {
+                        if(stremp(apellido[i], apellido[j])==0)
+                        {
+                            if(strepy(nombre[i],nombre[j])>0)
+                        }
+                    }
+                }
         }
-    }
+        {
+            isEmpty[i]=1;
 
+        }
+        do
+        {
+            menu
+            swtich(opcion)
+            {
+                case:
+                break;
+            }
+            while(opcion!=5)
+        }
+    printf("Ingrese nombre y apellido: ");
+    fgets(nombre, sizeof(nombre),stdin);
+
+    printf("%s",nombre);
+    return 0;
 }
