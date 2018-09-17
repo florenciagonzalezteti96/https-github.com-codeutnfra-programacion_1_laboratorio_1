@@ -1,66 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
+
+struct eEmpleado
+{
+int legajo;
+char nombre[25];
+char sexo;
+float sueldo;
+};
+//TERMINA EN ; SI EMPIEZON DEFINIENDO LA ESTRUCTURA
+typedef struct
+{
+int legajo;
+char nombre[25];
+char sexo;
+float sueldo;
+}eEmpleado;
+
+
+
 
 int main()
 {
-    char nombre[cant][31] nomaux[31];
-    char apellido[cant] [31] apeaux[31];
-    int edad[cant] edadaux;
-    int legajo[cant] legajoaux;
-    int isEmpty[cant]isEmptyaux;
+   // struct empleado eEmpleado;
+    eEmpleado unEmpleado;
+    eEmpleado otroEmpleado;
+    eEmpleado empleado3={2222, "Jose", 'm', 20000};
+    eEmpleado empleado4;
 
-    for (1=0 < cant; i++)
-        {
-            for(j=i+1; < cant;j++)
-                {
-                    if(stremp(apellido[i],apellido[j])>0)
-                    {
-                        strepy(nomaux, nombre[i]);
-                        strepy(nombre[i],nombre[j]);
-                        strepy(nombre[j],nomaux);
-                        strepy(apeaux,apellido[i]);
-                        strepy(apellido[i],apellido[j]);
-                        strepy(apellido[j],apeaux);
+    empleado4=empleado3;
 
-                        edadaux=edad[i];
-                        edad[i]=edad[j];
-                        edad[j]=edadaux;
+    unEmpleado.legajo= 1234;
+    strcpy(unEmpleado.nombre,"Juan");
+    unEmpleado.sexo='m';
+    unEmpleado.sueldo=10000.5;
 
-                        legajoaux=legajo[i];
-                        legajo[i]=legajo[j];
-                        legajo[j]=legajoaux;
+    otroEmpleado.legajo= 1122;
+    strcpy(otroEmpleado.nombre,"Lucia");
+    otroEmpleado.sexo='f';
+    otroEmpleado.sueldo=15000.75;
 
-                        isEmptyaux=isEmpty[i];
-                        isEmpty[i]=isEmpty[j];
-                        isEmpty[j]=isEmptyaux;
 
-                    }
-                    else
-                    {
-                        if(stremp(apellido[i], apellido[j])==0)
-                        {
-                            if(strepy(nombre[i],nombre[j])>0)
-                        }
-                    }
-                }
-        }
-        {
-            isEmpty[i]=1;
+        mostrarEmpleado(unEmpleado);
+        mostrarEmpleado(otroEmpleado);
+        mostrarEmpleado(empleado3);
+        mostrarEmpleado(empleado4);
 
-        }
-        do
-        {
-            menu
-            swtich(opcion)
-            {
-                case:
-                break;
-            }
-            while(opcion!=5)
-        }
-    printf("Ingrese nombre y apellido: ");
-    fgets(nombre, sizeof(nombre),stdin);
 
-    printf("%s",nombre);
     return 0;
 }
+
+void mostrarEmpleado(eEmpleado employee)
+{
+        printf("%d %s %c %.2f\n\n", employee.legajo, employee.nombre, employee.sexo, employee.sueldo);
+
+}
+
+
+
+
