@@ -1,62 +1,62 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<string.h>
+#include "persona.h"
 
-struct eEmpleado
-{
-int legajo;
-char nombre[25];
-char sexo;
-float sueldo;
-};
-//TERMINA EN ; SI EMPIEZON DEFINIENDO LA ESTRUCTURA
-typedef struct
-{
-int legajo;
-char nombre[25];
-char sexo;
-float sueldo;
-}eEmpleado;
-
-
-
+#define CANT 3
 
 int main()
 {
-   // struct empleado eEmpleado;
-    eEmpleado unEmpleado;
-    eEmpleado otroEmpleado;
-    eEmpleado empleado3={2222, "Jose", 'm', 20000};
-    eEmpleado empleado4;
+    char persona [CANT][31],peraux[31];
+    char seguir='s';
+    int opcion=0;
+    EPersona personas[CANT];
 
-    empleado4=empleado3;
+    init(personas, CANT);
 
-    unEmpleado.legajo= 1234;
-    strcpy(unEmpleado.nombre,"Juan");
-    unEmpleado.sexo='m';
-    unEmpleado.sueldo=10000.5;
+    do{
+        printf("1- Agregar persona\n");
+        printf("2- Borrar persona\n");
+        printf("3- Modificar persona\n");
+        printf("4- Imprimir lista ordenada por apellido y nombre\n\n");
+        printf("5- Salir\n");
 
-    otroEmpleado.legajo= 1122;
-    strcpy(otroEmpleado.nombre,"Lucia");
-    otroEmpleado.sexo='f';
-    otroEmpleado.sueldo=15000.75;
+        scanf("%d",&opcion);
+
+        switch(opcion)
+        {
+            case 1:
+                printf("Ingrese el nombre y apellido de la persona: ");
+                fflush(stdin);
 
 
-        mostrarEmpleado(unEmpleado);
-        mostrarEmpleado(otroEmpleado);
-        mostrarEmpleado(empleado3);
-        mostrarEmpleado(empleado4);
+                alta(personas, CANT);
+                break;
+            case 2:
+                printf("Documento: ");
+                scanf("%d", auxDoc);
 
+                for(i=0; i<CANT; i++)
+                {
+                    if(auxLegajo==legajo[i])
+                    {
+                        isEmpty[i]=1;
+                        flag=1;
+                    }
+                    if(flag==0)
+                    {
+                        printf("Dato no encontrado");
+                    }
+                }
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                seguir = 'n';
+                break;
+        }
+    }while(seguir == 's');
 
     return 0;
 }
-
-void mostrarEmpleado(eEmpleado employee)
-{
-        printf("%d %s %c %.2f\n\n", employee.legajo, employee.nombre, employee.sexo, employee.sueldo);
-
-}
-
-
-
-
