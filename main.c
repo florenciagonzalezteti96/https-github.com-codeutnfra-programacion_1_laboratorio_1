@@ -1,62 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "persona.h"
-
-#define CANT 3
 
 int main()
 {
-    char persona [CANT][31],peraux[31];
-    char seguir='s';
-    int opcion=0;
-    EPersona personas[CANT];
+int numeros;
+    int contador=0;
+    int numerosNegativos=0;
+    int numerosPositivos=0;
+    int i;
 
-    init(personas, CANT);
-
-    do{
-        printf("1- Agregar persona\n");
-        printf("2- Borrar persona\n");
-        printf("3- Modificar persona\n");
-        printf("4- Imprimir lista ordenada por apellido y nombre\n\n");
-        printf("5- Salir\n");
-
-        scanf("%d",&opcion);
-
-        switch(opcion)
+    for(i=0; i<5; i++)
         {
-            case 1:
-                printf("Ingrese el nombre y apellido de la persona: ");
-                fflush(stdin);
+            printf("ingrese un numero :  \n");
+            scanf("%d",&numeros);
 
+            //contador=contador+numeros;
 
-                alta(personas, CANT);
-                break;
-            case 2:
-                printf("Documento: ");
-                scanf("%d", auxDoc);
+            if(numeros>0)
+            {
+                //numerosPositivos=contador;
+                numerosPositivos++; //(me los suma y los cuenta)
 
-                for(i=0; i<CANT; i++)
-                {
-                    if(auxLegajo==legajo[i])
-                    {
-                        isEmpty[i]=1;
-                        flag=1;
-                    }
-                    if(flag==0)
-                    {
-                        printf("Dato no encontrado");
-                    }
-                }
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                seguir = 'n';
-                break;
+            }
+            else
+            {
+                //numerosNegativos=contador;
+                numerosNegativos++;
+            }
         }
-    }while(seguir == 's');
-
+            printf("la cantidad de numeros positivos son : %i\n",numerosPositivos);
+            printf("la cantidad de numeros negativos son : %i\n",numerosNegativos);
     return 0;
 }
